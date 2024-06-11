@@ -32,3 +32,5 @@ with st.expander('Click to expand'):
     st.bar_chart({'Data':[random.randint(2,10) for _ in range(25)]})
     st.write('This is an image of a dog')
     st.image('https://static.streamlit.io/examples/dog.jpg')
+
+    
