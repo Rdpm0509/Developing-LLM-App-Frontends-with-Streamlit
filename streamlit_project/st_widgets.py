@@ -84,3 +84,4 @@ if camera_photo:
     st.image(camera_photo)
 
 # st.image('path_to_file')
+
