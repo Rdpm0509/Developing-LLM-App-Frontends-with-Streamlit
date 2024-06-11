@@ -52,3 +52,35 @@ st.divider()
 cities = ['SP', 'MG', 'RJ', 'PE']
 city = st.selectbox('Your city', cities)
 st.write(f'You live in {city}')
+
+st.divider()
+# SLIDER
+x = st.slider('x', value=15, min_value=12, max_value=78, step=3)
+st.write(f'x is {x}')
+
+st.divider()
+# FILE UPLOADER
+# uploaded_file = st.file_uploader('Upload a file:' )
+uploaded_file = st.file_uploader('Upload a file:', type=['txt', 'csv'] ) #alowinng only a few extensions
+if uploaded_file: 
+    st.write(uploaded_file)
+    if uploaded_file.type == 'text/plain':
+        from io import StringIO
+        stringio = StringIO(uploaded_file.getvalue().decode('utf-8'))
+        string_data = stringio.read()
+        st.write(string_data)
+    if uploaded_file.type == 'text/csv':
+        import pandas as pd 
+        df = pd.read_csv(uploaded_file)
+        st.write(df)
+    else:
+        import pandas as pd 
+        df = pd.read_excel(uploaded_file)
+        st.write(df)
+
+# CAMERA INPUT
+camera_photo = st.camera_input('Take a photo')
+if camera_photo:
+    st.image(camera_photo)
+
+# st.image('path_to_file')
