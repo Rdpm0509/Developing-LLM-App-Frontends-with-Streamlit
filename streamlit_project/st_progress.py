@@ -12,6 +12,6 @@ time.sleep(2)
 for i in range(100):
     my_bar.progress(i+1)
     latest_iteration.text(f'Iteration {i+1}')
-    time.sleep(0.1) #faking a timespan
+    time.sleep(0.1) #faking a time
 
 st.write('We are done! :+1:')
